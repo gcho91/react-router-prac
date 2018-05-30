@@ -27,18 +27,31 @@ class App extends Component {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/hello">Hello</Link></li>
+              <li><Link to="/hello/goodmorning">Hello morning</Link></li>
+                
               <li><Link to="/about">About</Link></li>
               <li><Link to="/books">Books</Link></li>
+
+              <li><Link to="/gloria">Glog</Link></li>
+              
               
             </ul>
 
             <hr/>
             {/* Routes will go here */}
+          <Switch>
             <Route path="/" exact={true} component={Home} />
             <Route path="/hello" component={Hello} />
+            <Route path="/hello/goodmorning" render={() => { return      <h1>Goodmorning</h1> }} />
+            
             <Route path="/about" component={About} />
             <Route path="/books" component={Books} />
+
+            <Route path="/gloria" render={()=> {
+              return <div>rendering component inline</div>
+            }} />
             
+          </Switch>
 
             
             
